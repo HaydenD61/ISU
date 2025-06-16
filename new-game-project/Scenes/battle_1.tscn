@@ -1,0 +1,309 @@
+[gd_scene load_steps=14 format=3 uid="uid://dp0wttv6djpeu"]
+
+[ext_resource type="Script" uid="uid://cyrgce2xqqtqo" path="res://Scenes/Battle1.cs" id="1_s6oc8"]
+[ext_resource type="Texture2D" uid="uid://bube7nnycd6k0" path="res://Assets/Backgrounds/Battle1.png" id="2_fmdkt"]
+[ext_resource type="Texture2D" uid="uid://cy184lq8tduf7" path="res://Assets/Sprites/Screenshot_2025-06-14_at_9.23.39_AM-removebg-preview.png" id="3_kc3te"]
+[ext_resource type="Texture2D" uid="uid://dkue0eperrhx5" path="res://Assets/Sprites/Screenshot_2025-06-14_at_9.44.32_AM-removebg-preview.png" id="4_wgfp6"]
+[ext_resource type="FontFile" uid="uid://b55x683c8jl5s" path="res://Assets/Fonts/Heroking-Regular.ttf" id="5_wmelu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7aa0"]
+font = ExtResource("5_wmelu")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_wmelu"]
+resource_name = "player_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PlayerSprite:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [232.0, 783.0, 219.0]
+}
+
+[sub_resource type="Animation" id="Animation_o7aa0"]
+resource_name = "player_death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PlayerSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.613514, 0.693133), Vector2(-0.00331629, -0.00297482)]
+}
+
+[sub_resource type="Animation" id="Animation_i0p5e"]
+resource_name = "enemy_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/EnemySprite:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [900.0, 343.0, 941.0]
+}
+
+[sub_resource type="Animation" id="Animation_fmmdn"]
+resource_name = "enemy_death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/EnemySprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.57432, -3.14275]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/EnemySprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.794878, 0.796249), Vector2(5.90158e-06, -0.00279386)]
+}
+
+[sub_resource type="Animation" id="Animation_3ptkk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PlayerSprite:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [219.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/EnemySprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/EnemySprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.794878, 0.796249)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/EnemySprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(900, 496)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/EnemySprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/EnemySprite:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [900.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/PlayerSprite:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.613514, 0.693133)]
+}
+
+[sub_resource type="Animation" id="Animation_1ll53"]
+resource_name = "enemy_enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/EnemySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(900, 496), Vector2(900, 496)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/EnemySprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.00136e-05, -0.00279385), Vector2(0.724796, -0.789474)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/EnemySprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -3.15044]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/EnemySprite:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ll53"]
+_data = {
+&"RESET": SubResource("Animation_3ptkk"),
+&"enemy_attack": SubResource("Animation_i0p5e"),
+&"enemy_death": SubResource("Animation_fmmdn"),
+&"enemy_enter": SubResource("Animation_1ll53"),
+&"player_attack": SubResource("Animation_wmelu"),
+&"player_death": SubResource("Animation_o7aa0")
+}
+
+[node name="BattleScene" type="Node2D" node_paths=PackedStringArray("AnimPlayer", "InfoLabel", "PlayerHPBar", "EnemyHPBar")]
+script = ExtResource("1_s6oc8")
+AnimPlayer = NodePath("AnimationPlayer")
+InfoLabel = NodePath("InfoLabel")
+PlayerHPBar = NodePath("PlayerHealthBar")
+EnemyHPBar = NodePath("EnemyHealthBar")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 650.0
+texture = ExtResource("2_fmdkt")
+expand_mode = 1
+
+[node name="InfoLabel" type="Label" parent="."]
+offset_left = 468.0
+offset_top = 55.0
+offset_right = 659.0
+offset_bottom = 104.0
+label_settings = SubResource("LabelSettings_o7aa0")
+
+[node name="BasicAttack" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 249.0
+offset_right = 162.0
+offset_bottom = 294.0
+text = "Basic Attack"
+
+[node name="SpecialAttack" type="Button" parent="."]
+offset_left = 23.0
+offset_top = 323.0
+offset_right = 160.0
+offset_bottom = 373.0
+text = "Special Attack
+"
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="."]
+offset_left = 94.0
+offset_top = 43.0
+offset_right = 281.0
+offset_bottom = 111.0
+max_value = 20.0
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="."]
+offset_left = 840.0
+offset_top = 44.0
+offset_right = 1035.0
+offset_bottom = 113.0
+max_value = 20.0
+
+[node name="HealSpell" type="Button" parent="."]
+offset_left = 171.0
+offset_top = 292.0
+offset_right = 301.0
+offset_bottom = 340.0
+text = "Heal Spell"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1ll53")
+}
+
+[node name="PlayerSprite" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(219, 534)
+scale = Vector2(0.613514, 0.693133)
+texture = ExtResource("3_kc3te")
+
+[node name="EnemySprite" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(900, 496)
+scale = Vector2(0.794878, 0.796249)
+texture = ExtResource("4_wgfp6")
+flip_h = true
+
+[connection signal="pressed" from="BasicAttack" to="." method="OnBasicAttackPressed"]
+[connection signal="pressed" from="SpecialAttack" to="." method="OnSpecialAttackPressed"]
+[connection signal="pressed" from="HealSpell" to="." method="OnHealSpellPressed"]

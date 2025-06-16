@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dun8p6t7akrdw"]
+
+[ext_resource type="Texture2D" uid="uid://rkw5qm760acf" path="res://Assets/Backgrounds/Title Screen.png" id="1_k52d1"]
+[ext_resource type="Script" uid="uid://oqenwcolniv1" path="res://Scenes/GameOver.cs" id="1_ktc4i"]
+[ext_resource type="FontFile" uid="uid://b55x683c8jl5s" path="res://Assets/Fonts/Heroking-Regular.ttf" id="2_ktc4i"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ktc4i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 652.0
+texture = ExtResource("1_k52d1")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 228.0
+offset_right = 779.0
+offset_bottom = 392.0
+theme_override_fonts/normal_font = ExtResource("2_ktc4i")
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 100
+text = "GAME OVER"
+fit_content = true

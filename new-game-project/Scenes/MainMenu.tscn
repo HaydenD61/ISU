@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuy267egwrxkq"]
+
+[ext_resource type="Script" uid="uid://vi6qcbiocwb2" path="res://Scenes/MainMenu.cs" id="1_df05h"]
+[ext_resource type="Texture2D" uid="uid://rkw5qm760acf" path="res://Assets/Backgrounds/Title Screen.png" id="2_8um5k"]
+[ext_resource type="FontFile" uid="uid://b55x683c8jl5s" path="res://Assets/Fonts/Heroking-Regular.ttf" id="3_xim88"]
+[ext_resource type="Texture2D" uid="uid://dj0bo3p2kqojf" path="res://Assets/Weapons/2660636_demongutz_pixel-art-revolution-ember-s-sword-removebg-preview.png" id="4_koqhg"]
+[ext_resource type="Texture2D" uid="uid://dbtugdgxn585d" path="res://Assets/Buttons/Screenshot_2025-05-13_at_2.47.49_PM-removebg-preview.png" id="5_df05h"]
+[ext_resource type="Texture2D" uid="uid://cdnw6u43e0lvd" path="res://Assets/Buttons/Screenshot_2025-05-13_at_2.56.23_PM-removebg-preview.png" id="6_8um5k"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_df05h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8um5k")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 27.0
+offset_right = 843.0
+offset_bottom = 191.0
+theme_override_fonts/normal_font = ExtResource("3_xim88")
+theme_override_font_sizes/normal_font_size = 100
+text = "Battle   Kings"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="RichTextLabel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 17.0
+offset_right = 363.0
+offset_bottom = 144.0
+texture = ExtResource("4_koqhg")
+expand_mode = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 252.0
+offset_right = 210.0
+offset_bottom = 340.0
+icon = ExtResource("5_df05h")
+flat = true
+expand_icon = true
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 353.0
+offset_right = 227.0
+offset_bottom = 451.0
+icon = ExtResource("6_8um5k")
+flat = true
+expand_icon = true
